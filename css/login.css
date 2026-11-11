@@ -1,0 +1,382 @@
+/* ==========================================================================
+   KHALIJEUNA WAHID - AUTHENTICATION (LOGIN & REGISTER) STYLESHEET
+   Modern, elegant, and luxurious styling matching brand identity.
+   ========================================================================== */
+
+/* 1. قسم الصفحة والحاوية الخارجية */
+.login-page-section {
+    background-color: #f7f5ee;
+    min-height: calc(100vh - 85px - 220px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 1.5rem;
+}
+
+.login-content-container {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. بطاقة تسجيل الدخول وإنشاء الحساب الفخمة */
+.login-card {
+    background-color: #ffffff;
+    border: 2px solid #b9935a;
+    border-radius: 20px;
+    width: 100%;
+    padding: 2.75rem 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.login-card:hover {
+    box-shadow: 0 14px 35px rgba(185, 147, 90, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* 3. شريط التبويبات التفاعلي بالخط الذهبي الأنيق */
+.login-tabs {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #eae6df;
+    margin-bottom: 2.25rem;
+    position: relative;
+    gap: 0.5rem;
+}
+
+.login-tab-btn {
+    flex: 1;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #6b7280;
+    background: transparent;
+    border: none;
+    border-bottom: 3.5px solid transparent;
+    padding: 0.75rem 1rem 0.85rem;
+    margin-bottom: -2px; /* يطابق الخط الذهبي فوق الفاصل تماماً */
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.25s ease-in-out;
+    outline: none;
+    user-select: none;
+}
+
+.login-tab-btn:hover {
+    color: #083325;
+}
+
+/* الحالة النشطة للتبويب: خط ذهبي سميك وواضح مع خط عريض داكن */
+.login-tab-btn.active {
+    color: #083325;
+    font-weight: 800;
+    border-bottom-color: #b9935a;
+}
+
+/* 4. الحاوية العامة للنماذج والتخطيط العمودي للحقول */
+.login-form-wrapper {
+    display: none;
+}
+
+.login-form-wrapper.active {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 1.35rem;
+    text-align: right;
+    width: 100%;
+}
+
+.form-group label {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #083325;
+    display: block;
+    user-select: none;
+}
+
+/* 5. تصميم الحقول الفسيحة ذات الإطار الذهبي المتصل */
+.form-group input {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    width: 100%;
+    padding: 0.85rem 1.15rem;
+    border: 1.8px solid rgba(185, 147, 90, 0.45); /* إطار ذهبي دافئ متصل */
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #1f2937;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+    direction: rtl;
+    text-align: right;
+}
+
+/* نص التلميح التوضيحي بلون رمادي خفيف */
+.form-group input::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+/* حالة التركيز (Focus): زيادة وضوح الإطار مع توهج ذهبي ناعم */
+.form-group input:focus {
+    border-color: #b9935a;
+    box-shadow: 0 0 0 3.5px rgba(185, 147, 90, 0.22);
+    background-color: #ffffff;
+}
+
+/* 6. صف الخيارات (تذكرني / نسيت كلمة المرور / الشروط) */
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.25rem 0 1.5rem;
+    width: 100%;
+}
+
+.auth-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #4b5563;
+    user-select: none;
+}
+
+.auth-checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #b9935a;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.forgot-password-link {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #b9935a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.forgot-password-link:hover {
+    color: #93713f;
+    text-decoration: underline;
+}
+
+.terms-row {
+    justify-content: flex-start;
+}
+
+/* 7. زر الإرسال الذهبي المطفي الفخم وحالة التحميل */
+.btn-auth-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    width: 100%;
+    background-color: #b9935a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.95rem 1.5rem;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(185, 147, 90, 0.25);
+    transition: all 0.25s ease;
+    margin-top: 0.5rem;
+}
+
+.btn-auth-submit:hover:not(:disabled) {
+    background-color: #a68249;
+    box-shadow: 0 6px 18px rgba(185, 147, 90, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-auth-submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-auth-submit:disabled,
+.btn-auth-submit.loading {
+    background-color: #a68249;
+    opacity: 0.85;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+/* مؤشر الدوران الذهبي/البرونزي الأنيق داخل الزر */
+.btn-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    border-right-color: #ffffff;
+    animation: authBtnSpin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes authBtnSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 8. رسائل التنبيه والتحقق من الأخطاء */
+.auth-feedback-msg {
+    margin-top: 1.25rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.auth-feedback-msg.error {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.auth-feedback-msg.success {
+    background-color: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+
+.input-error,
+.input-error:focus,
+.form-group input.input-error,
+.form-group input.input-error:focus {
+    border-color: #ef4444 !important;
+    background-color: #fffbfb !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* رسائل الخطأ أسفل الحقول مباشرة باللون الأحمر والمحاذاة لليمين */
+.field-error-text {
+    color: #ef4444;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.35rem;
+    text-align: right;
+    display: block;
+    line-height: 1.4;
+    animation: errorFadeIn 0.2s ease-in-out;
+}
+
+.terms-error-text {
+    color: #ef4444;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: -0.75rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    display: block;
+    line-height: 1.4;
+    animation: errorFadeIn 0.2s ease-in-out;
+}
+
+@keyframes errorFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 9. دعم اتجاه LTR للغة الإنجليزية */
+html[dir="ltr"] .form-group {
+    text-align: left;
+}
+
+html[dir="ltr"] .form-group input {
+    direction: ltr;
+    text-align: left;
+}
+
+html[dir="ltr"] .form-options {
+    direction: ltr;
+}
+
+html[dir="ltr"] .field-error-text,
+html[dir="ltr"] .terms-error-text {
+    text-align: left;
+}
+
+/* 10. التوافق مع الشاشات المتنقلة والجوال */
+@media (max-width: 540px) {
+    .login-card {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+    
+    .login-tabs {
+        margin-bottom: 1.75rem;
+    }
+    
+    .login-tab-btn {
+        font-size: 1.05rem;
+        padding: 0.65rem 0.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.15rem;
+    }
+    
+    .form-group input {
+        padding: 0.75rem 1rem;
+        font-size: 0.92rem;
+    }
+    
+    .btn-auth-submit {
+        padding: 0.85rem 1.25rem;
+        font-size: 1.05rem;
+    }
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-title="products_page_title">منتجاتنا وخدماتنا - مؤسسة خليجنا واحد للتجارة</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="استعرض كافة منتجات مؤسسة خليجنا واحد من معدات التغليف الحراري والتربيط والاسترتش، ومواد التغليف البلاستيكية والغذائية وحلول الصيانة والتوصيل.">
+    <meta name="keywords" content="منتجاتنا, معدات تغليف, مواد تغليف, رولات استرتش, بولي أوليفين, أكياس فاكيوم, صيانة معدات, توصيل">
+    <meta name="author" content="مؤسسة خليجنا واحد">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../images/الشعار.jpg" type="image/png">
+    
+    <!-- Google Fonts - Cairo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/products.css">
+    
+    <!-- Language Engine -->
+    <script src="../js/translations.js"></script>
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!--          1. شريط التنقل العلوي (HEADER)      -->
+    <!-- ========================================== -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- الشعار والاسم -->
+            <a href="index.html" class="logo-wrapper">
+                <img src="../images/الشعار.jpg" alt="شعار خليجنا واحد" class="header-logo">
+                <div class="logo-text">
+                    <span class="company-name" data-i18n="company_name">خليجنا واحد</span>
+                    <span class="company-subname" data-i18n="company_subname">Khalijuna Wahid</span>
+                </div>
+            </a>
+            
+            <!-- روابط التنقل -->
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" id="nav-btn-home" data-i18n="nav_home">الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-link" id="nav-btn-about" data-i18n="nav_about">من نحن</a></li>
+                    <li><a href="products.html" class="nav-link active" id="nav-btn-products" data-i18n="nav_products">منتجاتنا</a></li>
+                    <li><a href="contact.html" class="nav-link" id="nav-btn-contact" data-i18n="nav_contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
+            
+            <!-- زر الإجراء الرئيسي وزر اللغة -->
+            <div class="header-actions">
+                <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleLanguage()" aria-label="تبديل اللغة">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-text">English</span>
+                </button>
+                <a href="login.html" class="btn btn-gold btn-header" id="header-action-btn" data-i18n="btn_login">تسجيل الدخول</a>
+            </div>
+            
+            <!-- زر الجوال -->
+            <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!--               المحتوى الرئيسي (MAIN)         -->
+    <!-- ========================================== -->
+    <main class="content-wrapper">
+        <section id="products" class="page-section">
+            <!-- بنر الصفحة -->
+            <div class="hero-banner hero-banner-compact">
+                <div class="hero-container">
+                    <h1 class="hero-title text-center" data-i18n="products_page_title">منتجاتنا وخدماتنا</h1>
+                </div>
+            </div>
+            
+            <div class="products-detailed-container">
+                <!-- شريط تصفية الفئات السريع -->
+                <div class="category-tabs-container">
+                    <button class="tab-btn active" onclick="scrollToSubSection('equipment-sec')" data-i18n="tab_equipment">أولاً: معدات التغليف</button>
+                    <button class="tab-btn" onclick="scrollToSubSection('materials-sec')" data-i18n="tab_materials">ثانياً: مواد التغليف</button>
+                    <button class="tab-btn" onclick="scrollToSubSection('maintenance-sec')" data-i18n="tab_maintenance">ثالثاً: الصيانة والدعم</button>
+                    <button class="tab-btn" onclick="scrollToSubSection('delivery-sec')" data-i18n="tab_delivery">رابعاً: خدمة التوصيل</button>
+                </div>
+
+                <!-- 1. قسم معدات التغليف -->
+                <div id="equipment-sec" class="product-subsection">
+                    <h2 class="subsection-title-main" data-i18n="sec_equipment_title">أولاً: معدات التغليف</h2>
+                    <div class="subsection-underline"></div>
+                    
+                    <div class="products-grid-detailed">
+                        <!-- معدة 1 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/رولات التربيط.jpg" alt="آلة رولات التربيط">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="eq_strap1_title">آلة رولات التربيط</h3>
+                                <p class="prod-desc-det" data-i18n="eq_strap1_desc">تقوم بربط العلب الكرتونية بحزام الشنبر مع إمكانية التحكم بقوة الشد بما يناسب حجم الكرتونة.</p>
+                            </div>
+                        </div>
+
+                        <!-- معدة 2 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/آلة رولات التربيط (آلي).jpg" alt="آلة رولات التربيط المتقدمة">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="eq_strap2_title">آلة رولات التربيط (آلي)</h3>
+                                <p class="prod-desc-det" data-i18n="eq_strap2_desc">تتميز بذراع علوي يمر فيه الشنبر لشد وتربيط آلي متكامل لضمان أمان أعلى وإنتاجية مرتفعة.</p>
+                            </div>
+                        </div>
+
+                        <!-- معدة 3 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/ماكينة لف الكراتين والطرود.jpg" alt="ماكينة لف الكراتين والطرود">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="eq_wrapper_title">ماكينة لف الكراتين والطرود</h3>
+                                <p class="prod-desc-det" data-i18n="eq_wrapper_desc">تستخدم للف الكراتين والطرود التي لا تزيد أوزانها عن 100 كجم لحمايتها من الغبار والماء والاحتكاك.</p>
+                            </div>
+                        </div>
+
+                        <!-- معدة 4 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/ماكينات التلحيم المستمر.jpg" alt="ماكينات التلحيم المستمر">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="eq_sealer_title">ماكينات التلحيم المستمر</h3>
+                                <p class="prod-desc-det" data-i18n="eq_sealer_desc">تقوم بتلحيم الأكياس على سير متحرك مع إمكانية طباعة تاريخ الإنتاج والانتهاء على طرف الكيس.</p>
+                            </div>
+                        </div>
+
+                        <!-- معدة 5 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/ماكينات التغليف اليدوي.jpg" alt="ماكينات التغليف اليدوي">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="eq_manual_title">ماكينات التغليف اليدوي</h3>
+                                <p class="prod-desc-det" data-i18n="eq_manual_desc">تستخدم للتعبئة اليدوية وتغليف الأغذية في المخابز والأسواق والبيوت بقاعدة حرارية للقص والتلحيم.</p>
+                            </div>
+                        </div>
+
+                        <!-- معدة 6 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/ماكينة الشطرطون نصف أوتوماتيك.jpg" alt="ماكينة النصف أوتوماتيك">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="eq_taping_title">ماكينة الشطرطون نصف أوتوماتيك</h3>
+                                <p class="prod-desc-det" data-i18n="eq_taping_desc">تقوم بوضع الشريط اللاصق على الكرتون من الأعلى والأسفل بسهولة وسرعة بفضل السيور الدافعة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. قسم مواد التغليف -->
+                <div id="materials-sec" class="product-subsection">
+                    <h2 class="subsection-title-main" data-i18n="sec_materials_title">ثانياً: مواد التغليف</h2>
+                    <div class="subsection-underline"></div>
+                    
+                    <div class="products-grid-detailed">
+                        <!-- مادة 1 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/- لبولي اولفني ( يب اوه اف ).jpg" alt="بولي أوليفين (POF)">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="mat_pof_title">رولات بولي أوليفين (POF)</h3>
+                                <p class="prod-desc-det" data-i18n="mat_pof_desc">رولات التغليف الحراري المرنة والصديقة للبيئة.</p>
+                                <ul class="spec-list">
+                                    <li data-i18n="mat_pof_spec1">السماكات: من 12 إلى 30 ميكرون</li>
+                                    <li data-i18n="mat_pof_spec2">المقاسات: من 200 ملم إلى 800 ملم</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- مادة 2 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/بولي كلوريد الفاينيل.jpg" alt="بولي كلوريد الفاينيل (PVC)">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="mat_pvc_title">بولي كلوريد الفاينيل (PVC)</h3>
+                                <p class="prod-desc-det" data-i18n="mat_pvc_desc">تتميز بالشفافية العالية ومقاومة الخدوش أثناء النقل.</p>
+                                <ul class="spec-list">
+                                    <li data-i18n="mat_pvc_spec1">السماكات: من 17 إلى 30 ميكرون</li>
+                                    <li data-i18n="mat_pvc_spec2">المقاسات: من 200 ملم إلى 550 ملم</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- مادة 3 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/رولات الاسترتش.jpg" alt="رولات الاسترتش">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="mat_stretch_title">رولات الاسترتش</h3>
+                                <p class="prod-desc-det" data-i18n="mat_stretch_desc">للف الطبليات وحماية البضائع والكراتين من الغبار والرطوبة.</p>
+                                <ul class="spec-list">
+                                    <li data-i18n="mat_stretch_spec1">النوع الآلي: سماكة 23-30 ميكرون، وزن 13-20 كجم</li>
+                                    <li data-i18n="mat_stretch_spec2">النوع اليدوي: سماكة أقل من 20 ميكرون، وزن أقل من 5 كجم</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- مادة 4 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/حبل التربيط والتحزيم.jpg" alt="حبل التربيط والتحزيم">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="mat_cord_title">حبل التربيط والتحزيم</h3>
+                                <p class="prod-desc-det" data-i18n="mat_cord_desc">يستخدم لشد طبليات الرخام والحجر ويتميز بقوة ومرونة الشد العالية.</p>
+                                <ul class="spec-list">
+                                    <li data-i18n="mat_cord_spec1">المقاسات: 16ملم، 18ملم، 21ملم، 23ملم</li>
+                                    <li data-i18n="mat_cord_spec2">يتوفر معه بكلز (كلبش شد) من نفس المقاسات.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- مادة 5 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/رولات الكلنج فيلم.jpg" alt="رولات الكلنج فيلم الغذائي">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="mat_cling_title">رولات الكلنج فيلم</h3>
+                                <p class="prod-desc-det" data-i18n="mat_cling_desc">استرتش غذائي آمن تماماً يلامس المواد الغذائية دون أي خطورة صحية.</p>
+                                <ul class="spec-list">
+                                    <li data-i18n="mat_cling_spec1">الجامبو: يستخدم لماكينات التغليف الكبيرة</li>
+                                    <li data-i18n="mat_cling_spec2">المنزلي: رولات بأوزان خفيفة للاستخدام المنزلي</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- مادة 6 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/أكياس الفاكيوم الصحية.jpg" alt="أكياس الفاكيوم">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="mat_vac_title">أكياس الفاكيوم الصحية</h3>
+                                <p class="prod-desc-det" data-i18n="mat_vac_desc">أكياس سحب الهواء لحفظ اللحوم، الفواكه والخضروات لأطول فترة.</p>
+                                <ul class="spec-list">
+                                    <li data-i18n="mat_vac_spec1">تحتفظ بخصائص المنتج ولونه ونكهته الطبيعية.</li>
+                                    <li data-i18n="mat_vac_spec2">تأتي بخامات متعددة (بلاستيك، ألومنيوم).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- مادة 7 -->
+                        <div class="product-card-detailed">
+                            <div class="prod-img-box-det">
+                                <img src="../images/رولات الشطرطون اللاصق.jpg" alt="رولات الشطرطون">
+                            </div>
+                            <div class="prod-info-det">
+                                <h3 class="prod-title-det" data-i18n="mat_tape_title">رولات الشطرطون اللاصق</h3>
+                                <p class="prod-desc-det" data-i18n="mat_tape_desc">شريط لاصق بمختلف الاستخدامات والأحجام والمقاسات.</p>
+                                <ul class="spec-list">
+                                    <li data-i18n="mat_tape_spec1">البلاستيكي الشفاف والبني: لربط وتغليف الكراتين والطرود.</li>
+                                    <li data-i18n="mat_tape_spec2">شريط الخبز الملون: بمقاس شائع 50 ياردة وعرض انش.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. قسم الصيانة والدعم -->
+                <div id="maintenance-sec" class="product-subsection service-subsection-block">
+                    <div class="service-flex-container">
+                        <div class="service-image-box">
+                            <img src="../images/الدعم.png" alt="فريق الصيانة" class="service-illustration-img">
+                        </div>
+                        <div class="service-text-box">
+                            <h2 class="subsection-title-main" data-i18n="sec_maintenance_title">ثالثاً: فريق الصيانة والدعم</h2>
+                            <div class="subsection-underline"></div>
+                            <p class="service-desc-paragraph" data-i18n="maint_p1">
+                                تعتبر الصيانة ركيزة أساسية للعمل لدينا لتوفير الأمان لعملائنا بالاستمرارية في عملهم دون انقطاع.
+                            </p>
+                            <p class="service-desc-paragraph" data-i18n="maint_p2">
+                                يتواجد لدينا فريق صيانة محترف لتركيب معدات وأجهزة التغليف وصيانتها بشكل فوري.
+                            </p>
+                            <div class="service-action-box">
+                                <a href="contact.html" class="btn btn-gold" data-i18n="btn_req_maintenance">طلب صيانة الآن</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. قسم التوصيل والشحن -->
+                <div id="delivery-sec" class="product-subsection service-subsection-block">
+                    <div class="service-flex-container reverse">
+                        <div class="service-image-box">
+                            <img src="../images/سيارة التوصيل.jpg" alt="سيارة التوصيل" class="service-illustration-img">
+                        </div>
+                        <div class="service-text-box">
+                            <h2 class="subsection-title-main" data-i18n="sec_delivery_title">رابعاً: خدمة التوصيل</h2>
+                            <div class="subsection-underline"></div>
+                            <p class="service-desc-paragraph" data-i18n="deliv_p1">
+                                نوفر خدمة التوصيل المباشر للبضائع والطلبات إلى موقعكم بعد إتمام عملية الشراء سواء عن طريق المتجر أو الشراء المباشر.
+                            </p>
+                            <div class="slogan-badge" data-i18n="deliv_slogan">
+                                <i class="fas fa-phone-volume"></i> شعارنا: اتصل نصل داخل الرياض
+                            </div>
+                            <p class="service-desc-paragraph" data-i18n="deliv_p2">
+                                أما خارج مدينة الرياض، فلدينا تعاقدات مع كبرى شركات الشحن المحلية التي تغطي كافة أنحاء المملكة العربية السعودية.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!--                  (FOOTER)                  -->
+    <!-- ========================================== -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- عمود التواصل -->
+            <div class="footer-col col-contact">
+                <h3 class="footer-col-title" data-i18n="footer_contact_title">التواصل</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-location-dot"></i> <span data-i18n="footer_address">الرياض، المملكة العربية السعودية</span></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:KhalijunaWahid@gmail.com">KhalijunaWahid@gmail.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+966507813100" dir="ltr">+966507813100</a></li>
+                </ul>
+            </div>
+            
+            <!-- عمود الخدمات -->
+            <div class="footer-col col-services">
+                <h3 class="footer-col-title" data-i18n="footer_services_title">خدماتنا</h3>
+                <ul class="footer-links">
+                    <li><a href="products.html#materials-sec" data-i18n="footer_link_materials">مواد تغليف</a></li>
+                    <li><a href="products.html#equipment-sec" data-i18n="footer_link_equipment">معدات تغليف</a></li>
+                    <li><a href="products.html#maintenance-sec" data-i18n="footer_link_maintenance">صيانة</a></li>
+                </ul>
+            </div>
+            
+            <!-- عمود من نحن -->
+            <div class="footer-col col-about">
+                <h3 class="footer-col-title" data-i18n="footer_about_title">من نحن</h3>
+                <p class="footer-about-text" data-i18n="footer_about_text">
+                    مؤسسة خليجنا واحد للتجارة، نوفر أجود معدات ومواد التغليف البلاستيكية والغذائية وحلول الصيانة والدعم اللوجستي لعملائنا في جميع أنحاء المملكة.
+                </p>
+            </div>
+            
+            <!-- عمود الشعار والاسم -->
+            <div class="footer-col col-brand">
+                <img src="../images/الشعار.jpg" alt="شعار خليجنا واحد" class="footer-logo">
+                <div class="brand-text">
+                    <span class="company-name" data-i18n="company_name">خليجنا واحد</span>
+                    <span class="company-subname" data-i18n="company_subname">Khalijuna Wahid</span>
+                </div>
+                <p class="brand-slogan" data-i18n="brand_slogan">معدات ومواد تغليف</p>
+                <p class="brand-desc" data-i18n="brand_desc">نخدم العديد من القطاعات بشكل احترافي وتوفير خدمة صيانة وتوصيل.</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p data-i18n="footer_rights">&copy; 2026 مؤسسة خليجنا واحد للتجارة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bundle -->
+    <script src="../js/products.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-title="login_page_title">تسجيل الدخول - مؤسسة خليجنا واحد للتجارة</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="تسجيل الدخول وإنشاء حساب جديد في بوابة عملاء مؤسسة خليجنا واحد للتجارة لمتابعة الطلبات وعروض الأسعار.">
+    <meta name="keywords" content="تسجيل الدخول, إنشاء حساب, حساب جديد, خليجنا واحد, بوابة العملاء">
+    <meta name="author" content="مؤسسة خليجنا واحد">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../images/الشعار.jpg" type="image/png">
+    
+    <!-- Google Fonts - Cairo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+    
+    <!-- Language Engine -->
+    <script src="../js/translations.js"></script>
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!--          1. شريط التنقل العلوي (HEADER)      -->
+    <!-- ========================================== -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- الشعار والاسم -->
+            <a href="index.html" class="logo-wrapper">
+                <img src="../images/الشعار.jpg" alt="شعار خليجنا واحد" class="header-logo">
+                <div class="logo-text">
+                    <span class="company-name" data-i18n="company_name">خليجنا واحد</span>
+                    <span class="company-subname" data-i18n="company_subname">Khalijuna Wahid</span>
+                </div>
+            </a>
+            
+            <!-- روابط التنقل -->
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link" id="nav-btn-home" data-i18n="nav_home">الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-link" id="nav-btn-about" data-i18n="nav_about">من نحن</a></li>
+                    <li><a href="products.html" class="nav-link" id="nav-btn-products" data-i18n="nav_products">منتجاتنا</a></li>
+                    <li><a href="contact.html" class="nav-link" id="nav-btn-contact" data-i18n="nav_contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
+            
+            <!-- زر الإجراء الرئيسي وزر اللغة -->
+            <div class="header-actions">
+                <button class="lang-toggle-btn" id="lang-toggle-btn" onclick="toggleLanguage()" aria-label="تبديل اللغة">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-text">English</span>
+                </button>
+                <a href="login.html" class="btn btn-gold btn-header active" id="header-action-btn" data-i18n="btn_login">تسجيل الدخول</a>
+            </div>
+            
+            <!-- زر الجوال -->
+            <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!--               المحتوى الرئيسي (MAIN)         -->
+    <!-- ========================================== -->
+    <main class="content-wrapper">
+        <section id="login" class="login-page-section">
+            <div class="login-content-container">
+                <div class="login-card">
+                    <!-- التبويبات التفاعلية -->
+                    <div class="login-tabs">
+                        <button type="button" class="login-tab-btn active" id="tab-login-btn" onclick="toggleLoginTabs('signin')" data-i18n="tab_signin">تسجيل الدخول</button>
+                        <button type="button" class="login-tab-btn" id="tab-register-btn" onclick="toggleLoginTabs('signup')" data-i18n="tab_signup">إنشاء حساب جديد</button>
+                    </div>
+
+                    <!-- نموذج تسجيل الدخول -->
+                    <div class="login-form-wrapper active" id="signin-form-wrapper">
+                        <form id="signin-form" class="auth-form" novalidate>
+                            <div class="form-group">
+                                <label for="login-email" data-i18n="label_login_user">البريد الإلكتروني أو رقم الجوال</label>
+                                <input type="text" id="login-email" required placeholder="name@domain.com أو 05xxxxxxxx" data-i18n-placeholder="placeholder_login_user" autocomplete="username">
+                                <span class="field-error-text" id="error-login-email" style="display:none;"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password" data-i18n="label_login_password">كلمة المرور</label>
+                                <input type="password" id="login-password" required placeholder="أدخل كلمة المرور" data-i18n-placeholder="placeholder_login_password" autocomplete="current-password">
+                                <span class="field-error-text" id="error-login-password" style="display:none;"></span>
+                            </div>
+                            <div class="form-options">
+                                <label class="auth-checkbox-label">
+                                    <input type="checkbox" id="remember-me-check"> <span data-i18n="label_remember">تذكرني</span>
+                                </label>
+                                <a href="#forgot" class="forgot-password-link" onclick="handleForgotPassword(event)" data-i18n="link_forgot">نسيت كلمة المرور؟</a>
+                            </div>
+                            <button type="submit" class="btn-auth-submit" data-i18n="btn_signin_submit">دخول</button>
+                            <div id="signin-feedback" class="auth-feedback-msg" style="display:none;"></div>
+                        </form>
+                    </div>
+
+                    <!-- نموذج إنشاء حساب جديد -->
+                    <div class="login-form-wrapper" id="signup-form-wrapper">
+                        <form id="signup-form" class="auth-form" novalidate>
+                            <div class="form-group">
+                                <label for="reg-name" data-i18n="label_reg_name">الاسم الكامل</label>
+                                <input type="text" id="reg-name" required placeholder="ادخل اسمك الكامل (أحرف فقط)" data-i18n-placeholder="placeholder_reg_name" autocomplete="name">
+                                <span class="field-error-text" id="error-reg-name" style="display:none;"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-user" data-i18n="label_reg_user">البريد الإلكتروني أو رقم الجوال</label>
+                                <input type="text" id="reg-user" required placeholder="name@domain.com أو 05xxxxxxxx" data-i18n-placeholder="placeholder_reg_user" autocomplete="username">
+                                <span class="field-error-text" id="error-reg-user" style="display:none;"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password" data-i18n="label_reg_password">كلمة المرور</label>
+                                <input type="password" id="reg-password" required placeholder="أدخل كلمة المرور (على الأقل 8 خانات)" data-i18n-placeholder="placeholder_reg_password" autocomplete="new-password">
+                                <span class="field-error-text" id="error-reg-password" style="display:none;"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password-confirm" data-i18n="label_reg_confirm">تأكيد كلمة المرور</label>
+                                <input type="password" id="reg-password-confirm" required placeholder="أعد إدخال كلمة المرور" data-i18n-placeholder="placeholder_reg_confirm" autocomplete="new-password">
+                                <span class="field-error-text" id="error-reg-password-confirm" style="display:none;"></span>
+                            </div>
+                            <div class="form-options terms-row">
+                                <label class="auth-checkbox-label">
+                                    <input type="checkbox" id="terms-accept-check" required> <span data-i18n="label_terms">أوافق على الشروط والأحكام وسياسة الخصوصية</span>
+                                </label>
+                            </div>
+                            <span class="terms-error-text" id="error-terms" style="display:none;"></span>
+                            <button type="submit" class="btn-auth-submit" data-i18n="btn_signup_submit">إنشاء حساب</button>
+                            <div id="signup-feedback" class="auth-feedback-msg" style="display:none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!--                  (FOOTER)                  -->
+    <!-- ========================================== -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- عمود التواصل -->
+            <div class="footer-col col-contact">
+                <h3 class="footer-col-title" data-i18n="footer_contact_title">التواصل</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-location-dot"></i> <span data-i18n="footer_address">الرياض، المملكة العربية السعودية</span></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:KhalijunaWahid@gmail.com">KhalijunaWahid@gmail.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+966507813100" dir="ltr">+966507813100</a></li>
+                </ul>
+            </div>
+            
+            <!-- عمود الخدمات -->
+            <div class="footer-col col-services">
+                <h3 class="footer-col-title" data-i18n="footer_services_title">خدماتنا</h3>
+                <ul class="footer-links">
+                    <li><a href="products.html#materials-sec" data-i18n="footer_link_materials">مواد تغليف</a></li>
+                    <li><a href="products.html#equipment-sec" data-i18n="footer_link_equipment">معدات تغليف</a></li>
+                    <li><a href="products.html#maintenance-sec" data-i18n="footer_link_maintenance">صيانة</a></li>
+                </ul>
+            </div>
+            
+            <!-- عمود من نحن -->
+            <div class="footer-col col-about">
+                <h3 class="footer-col-title" data-i18n="footer_about_title">من نحن</h3>
+                <p class="footer-about-text" data-i18n="footer_about_text">
+                    مؤسسة خليجنا واحد للتجارة، نوفر أجود معدات ومواد التغليف البلاستيكية والغذائية وحلول الصيانة والدعم اللوجستي لعملائنا في جميع أنحاء المملكة.
+                </p>
+            </div>
+            
+            <!-- عمود الشعار والاسم -->
+            <div class="footer-col col-brand">
+                <img src="../images/الشعار.jpg" alt="شعار خليجنا واحد" class="footer-logo">
+                <div class="brand-text">
+                    <span class="company-name" data-i18n="company_name">خليجنا واحد</span>
+                    <span class="company-subname" data-i18n="company_subname">Khalijuna Wahid</span>
+                </div>
+                <p class="brand-slogan" data-i18n="brand_slogan">معدات ومواد تغليف</p>
+                <p class="brand-desc" data-i18n="brand_desc">نخدم العديد من القطاعات بشكل احترافي وتوفير خدمة صيانة وتوصيل.</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p data-i18n="footer_rights">&copy; 2026 مؤسسة خليجنا واحد للتجارة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bundle -->
+    <script src="../js/login.js"></script>
+</body>
+</html>
