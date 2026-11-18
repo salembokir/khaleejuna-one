@@ -16,6 +16,7 @@ const translations = {
         nav_products: "منتجاتنا",
         nav_contact: "تواصل معنا",
         btn_login: "تسجيل الدخول",
+        btn_logout: "تسجيل الخروج",
         lang_btn_text: "English",
         
         // التذييل
@@ -207,6 +208,7 @@ const translations = {
         nav_products: "Products",
         nav_contact: "Contact Us",
         btn_login: "Sign In",
+        btn_logout: "Sign Out",
         lang_btn_text: "العربية",
         
         // Footer

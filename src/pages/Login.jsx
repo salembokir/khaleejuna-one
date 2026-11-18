@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useLanguage } from '../context/LanguageContext';
+import { useAuth } from '../context/AuthContext';
 import '../styles/login.css';
 
 const TranslatedToast = ({ msgKey }) => {
@@ -11,6 +12,7 @@ const TranslatedToast = ({ msgKey }) => {
 
 const Login = () => {
   const { t } = useLanguage();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState('signin');
@@ -122,9 +124,13 @@ const Login = () => {
     setSigninErrors({});
     setIsLoading(true);
 
-    // محاكاة إرسال الطلب وحالة التحميل التفاعلية
+    // محاكاة إرسال الطلب وحالة التحميل التفاعلية (جاهز للربط مع API)
     setTimeout(() => {
       setIsLoading(false);
+      login('demo_token_' + Date.now(), {
+        identifier: userVal,
+        name: userVal.includes('@') ? userVal.split('@')[0] : userVal,
+      });
       toast.success(<TranslatedToast msgKey="toast_login_success" />);
 
       setTimeout(() => {

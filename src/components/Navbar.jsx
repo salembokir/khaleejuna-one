@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useAuth } from '../context/AuthContext';
 import { logoImg } from '../assets/images';
-import { FaGlobe, FaBars, FaTimes } from 'react-icons/fa';
+import { FaGlobe, FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { lang, toggleLanguage, t } = useLanguage();
+  const { isAuthenticated, user, logout } = useAuth();
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
@@ -75,13 +77,28 @@ const Navbar = () => {
             <FaGlobe />
             <span className="lang-text">{lang === 'ar' ? 'English' : 'العربية'}</span>
           </button>
-          <Link
-            to="/login"
-            className={`btn btn-gold btn-header ${isActive('/login') ? 'active' : ''}`}
-            onClick={() => setMobileOpen(false)}
-          >
-            {t('btn_login')}
-          </Link>
+          {isAuthenticated ? (
+            <button
+              type="button"
+              className="btn btn-outline-white btn-header"
+              onClick={() => {
+                logout('/login');
+                setMobileOpen(false);
+              }}
+              title={user?.name || user?.email || t('btn_logout')}
+            >
+              <FaSignOutAlt style={{ marginInlineEnd: '6px' }} />
+              <span>{t('btn_logout')}</span>
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              className={`btn btn-gold btn-header ${isActive('/login') ? 'active' : ''}`}
+              onClick={() => setMobileOpen(false)}
+            >
+              {t('btn_login')}
+            </Link>
+          )}
         </div>
 
         {/* زر الجوال */}
